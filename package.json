@@ -9,7 +9,9 @@
     "precommit-hook": "^1.0.7"
   },
   "scripts": {
-    "test": "node tests/nr-of-episodes-tests.js",
     "lint": "node node_modules/jshint/bin/jshint ."
+  },
+  "dependencies": {
+    "wiki-infobox": "^0.1.2"
   }
 }
