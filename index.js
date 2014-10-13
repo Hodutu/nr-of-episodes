@@ -6,10 +6,15 @@ var reqTry = 0;
 var noe = function(title, cb) {
   reqTry++;
   wi(title, 'en', function(err, infobox) {
-    if (!infobox && title.indexOf('series') === -1) {
-      cb(new Error('No Episodes found :('));
+    if (err && title.indexOf('series') === -1) {
+      // There's an error but we didn't add 'TV SERIES' to the title
+      noe(title + ' (TV series)', cb);
+      return;
+    } else if (err) {
+      cb(new Error("No episodes found :("));
       return;
     }
+
     cb(err, infobox.num_episodes);
   });
 };
