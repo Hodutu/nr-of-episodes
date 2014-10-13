@@ -11,11 +11,11 @@ var noe = function(title, cb) {
       noe(title + ' (TV series)', cb);
       return;
     } else if (err) {
-      cb(new Error("No episodes found :("));
+      cb(new Error('No episodes found :('));
       return;
     }
 
-    cb(err, infobox.num_episodes);
+    cb(err, parseInt(infobox.num_episodes, 10));
   });
 };
 
