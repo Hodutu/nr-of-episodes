@@ -15,24 +15,19 @@ var noe = function(title, cb) {
       return;
     }
 
-    cb(err, parseInt(infobox.num_episodes, 10));
+    console.log(infobox.num_episodes);
+
+    var episodes = infobox.num_episodes.filter(function(element) {
+      var parsed = parseInt(element.value, 10);
+      return element.type === "text" && typeof parsed === 'number' && !Number.isNaN(parsed);
+    });
+
+    cb(err, parseInt(episodes[0].value, 10));
   });
 };
 
-var shows = [
-  {
-    title: 'Modern Family',
-    episodes: 126
-  },
-  {
-    title: 'Dollhouse',
-    episodes: 26
-  }
-];
 
-var nr = 1;
-
-noe(shows[nr].title, function(err, episodes) {
+noe('MacGyver', function(err, episodes) {
   if (err){
     console.log(err);
     return;
