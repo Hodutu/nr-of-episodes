@@ -13,6 +13,6 @@
     "lint": "node node_modules/jshint/bin/jshint ."
   },
   "dependencies": {
-    "wiki-infobox": "^0.1.2"
+    "wiki-infobox": "^0.2.0"
   }
 }
