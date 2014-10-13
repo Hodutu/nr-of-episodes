@@ -19,7 +19,9 @@ var noe = function(title, cb) {
 
     var episodes = infobox.num_episodes.filter(function(element) {
       var parsed = parseInt(element.value, 10);
-      return element.type === "text" && typeof parsed === 'number' && !Number.isNaN(parsed);
+      return element.type === 'text' &&
+        typeof parsed === 'number' &&
+        !Number.isNaN(parsed);
     });
 
     cb(err, parseInt(episodes[0].value, 10));
