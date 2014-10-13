@@ -1,7 +1,9 @@
 'use strict';
 
 var assert = require('assert');
-//var nr-of-episodes = require('../');
+var noe = require('../');
 
-// test 1
-assert(true);
+// Search by title
+noe('Modern Family', function(episodes) {
+  assert(episodes, 126);
+})
