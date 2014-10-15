@@ -3,7 +3,7 @@
 //var assert = require('assert');
 var noe = require('../');
 
-var list = require('../../tv-series/data/data.js');
+var list = [{title: 'Banshee'}];//require('../../tv-series/data/data.js');
 
 list.forEach(function(show){
   noe(show.title, function(e, d){
