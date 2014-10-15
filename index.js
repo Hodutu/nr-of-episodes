@@ -26,7 +26,7 @@ var noe = function(title, cb) {
           typeof parsed === 'number' &&
           !Number.isNaN(parsed);
       }).pop();
-    };
+    }
 
     episodes = episodes && episodes.value ? parseInt(episodes.value, 10) : 0;
     cb(err, episodes);
