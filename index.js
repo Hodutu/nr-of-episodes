@@ -6,7 +6,7 @@ var reqTry = 0;
 var noe = function(title, cb) {
   reqTry++;
   wi(title, 'en', function(err, infobox) {
-    if (err && title.indexOf('series') === -1) {
+    if ((err && title.indexOf('series') === -1) || typeof infobox.num_episodes === 'undefined') {
       // There's an error but we didn't add 'TV SERIES' to the title
       noe(title + ' (TV series)', cb);
       return;
