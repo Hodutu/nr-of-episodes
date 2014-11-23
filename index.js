@@ -8,7 +8,7 @@ var noe = function(title, cb) {
   wi(title, 'en', function(err, infobox) {
     if (
       (err && title.indexOf('series') === -1) ||
-      typeof infobox.num_episodes === 'undefined'
+      (infobox && typeof infobox.num_episodes === 'undefined')
     ) {
       // There's an error but we didn't add 'TV SERIES' to the title
       noe(title + ' (TV series)', cb);
