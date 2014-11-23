@@ -1,10 +1,14 @@
 'use strict';
 
 var wi = require('wiki-infobox');
+var wikiPages = require('./wiki-pages.json');
 
-var reqTry = 0;
 var noe = function(title, cb) {
-  reqTry++;
+
+  if (title in wikiPages) {
+    title = wikiPages[title];
+  }
+
   wi(title, 'en', function(err, infobox) {
     if (
       (err && title.indexOf('series') === -1) ||
@@ -18,7 +22,6 @@ var noe = function(title, cb) {
       return;
     }
 
-    console.log(title);
     var episodes = infobox.num_episodes;
 
     if (Array.isArray(infobox.num_episodes)) {
