@@ -39,14 +39,4 @@ var noe = function(title, cb) {
   });
 };
 
-
-// noe('MacGyver', function(err, episodes) {
-//   if (err){
-//     console.log(err);
-//     return;
-//   }
-//
-//   console.log(episodes);
-// });
-
 module.exports = noe;

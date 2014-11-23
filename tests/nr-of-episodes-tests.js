@@ -7,6 +7,8 @@ var list = require('../../tv-series/data/data.js'); //[{title: 'Banshee'}];
 
 list.forEach(function(show){
   noe(show.title, function(e, d){
-    console.log(show.title + ' episodes: ' + d);
+    //if (typeof d === 'undefined') {
+      console.log(show.title + ' episodes: ' + d);
+    //}
   });
 });
